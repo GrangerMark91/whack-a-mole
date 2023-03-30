@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.board{
+    width: 900px;
+    height: 900px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 80px;
+}
+.board .hole{
+    background-image: url(images/hole.png);
+    max-width: 221px;
+    position: relative;
+    overflow: hidden;
+}
+.hole img{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: animate .3s linear forwards;
+}
+@keyframes animate{
+    0%{
+       bottom: -100%;
+    }
+    100%{
+        bottom: 0;
+    }
+}
